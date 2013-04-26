@@ -1,0 +1,23 @@
+{
+  "name": "http-server_express_socketIO",
+  "preferGlobal": false,
+  "version": "0.3.0",
+  "author": "fabrice sodogandji ",
+  "description": "a simple express + socketIO  command-line http server",
+  "contributors": [ 
+    {
+      "name": "Fabrice Sodogandji",
+      "email": "fab@nfab.com"
+    } 
+  ],
+  "dependencies" : {
+    "express": "3.x",
+    "socket.io" :  "0.9.x"
+  },
+  "analyze": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  }
+}
+
