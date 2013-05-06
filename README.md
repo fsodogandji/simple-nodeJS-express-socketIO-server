@@ -13,5 +13,7 @@ Usage:
 ---------
 node express-socketio_server.js
 
-launch a browser at http://localhost:8081
+launch a browser at http://localhost:8081 and/or launch node socketio_client.js
+
+
 
