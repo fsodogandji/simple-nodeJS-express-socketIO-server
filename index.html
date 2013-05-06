@@ -4,6 +4,8 @@
         <meta charset="utf-8" />
         <title>HTML5 Demo</title>
         <link rel="stylesheet" href="css/style.css" /> 
+        <script src="/socket.io/socket.io.js"></script>  
+
     </head>
     <body>
 	<header>
@@ -45,8 +47,34 @@ According to the draft W3C spec, HTML5 sections usually have headings.</p>
     </section>
 </article>
 
+    <div id="socketID"></div> 
+    <div id="out"></div> 
+
 <footer>
     <p>&copy; 2013 Company Name. All rights reserved.</p>
 </footer>
+
+
+</style><script type='text/javascript'>
+
+var socket = io.connect('/test');
+
+
+      socket.on('PONG', function(data) {
+        // Affichage des données reçues du serveur
+         //point =  JSON.parse(data_socket_IO.message) ;
+         console.log("data",data.message);
+	document.getElementById('socketID').innerHTML = "SocketIO client socketID: " +  this.socket.sessionid ;
+        document.getElementById('out').innerHTML = "SocketIO server send: " +  data.message ;
+       
+      });
+  
+
+
+
+
+
+</script>
+
     </body>
 </html>

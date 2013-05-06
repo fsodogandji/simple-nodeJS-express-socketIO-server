@@ -25,4 +25,20 @@ app.configure(function(){
 });
 
 var   io = require('socket.io').listen(server);
+var nameservice = io.of('/test');
+nameservice.on('connection', function(socket) {
+  // Un client se connecte
+    console.log('Connexion');
+    socket.on('PING', function(data) {
+       // Message send by  client
+      // we resend to all the connected clients  
+              console.log( data.message + " from "+ socket.id  )
+              socket.broadcast.emit('PONG',  {'message': data.message + " from server"}  );
+              socket.emit('PONG', { 'message': data.message+ " from server" });
+  
+                            });
+                            });
+  //
+
+ 
 server.listen(port);
