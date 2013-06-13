@@ -3,7 +3,6 @@ var express = require("express"),
     server = require('http').createServer(app)
     port    = 8081;
     
-//app.get("/", function(req, res) {
 app.get('/', function handler(req, res) {
 
   //res.redirect("/index.html");
@@ -27,7 +26,7 @@ app.configure(function(){
 var   io = require('socket.io').listen(server);
 var nameservice = io.of('/test');
 nameservice.on('connection', function(socket) {
-  // Un client se connecte
+  //  client  connected
     console.log('Connexion');
     socket.on('PING', function(data) {
        // Message send by  client
